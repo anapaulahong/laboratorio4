@@ -50,6 +50,7 @@ fun Campus(name: String, modifier: Modifier = Modifier, cornerRadius: Dp) {
     Column{
         Text(
             text = "Campus Central",
+            fontWeight = FontWeight.Bold,
             modifier = modifier
                 .fillMaxSize()
                 .wrapContentSize(Alignment.TopCenter)

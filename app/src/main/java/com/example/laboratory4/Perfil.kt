@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -14,6 +15,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.MaterialTheme
@@ -26,11 +28,17 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.laboratory4.ui.theme.Laboratory4Theme
 
 class Perfil : ComponentActivity() {
@@ -39,7 +47,7 @@ class Perfil : ComponentActivity() {
         setContent {
             Laboratory4Theme {
                 // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colorScheme.background){
+                Surface(color = Color.White){
             }
         }
     }
@@ -50,6 +58,8 @@ fun Perfiil(name: String, modifier: Modifier = Modifier, cornerRadius: Dp) {
     Column{
         Text(
             text = "My Profile",
+            style = TextStyle(fontSize = 18.sp),
+            fontWeight = FontWeight.Bold,
             modifier = modifier
                 .fillMaxSize()
                 .wrapContentSize(Alignment.TopCenter)
@@ -57,42 +67,108 @@ fun Perfiil(name: String, modifier: Modifier = Modifier, cornerRadius: Dp) {
         )
     }
     Image(
-        painter = painterResource(id = R.drawable.campus),
-        contentDescription = "fotita campus uvg",
+        painterResource(id = R.drawable.settingss),
+        contentDescription = null,
         modifier = modifier
-            .width(450.dp)
-            .height(360.dp)
-    )
-    Text(
-        text = "DESTACADOS",
-        color = Color.DarkGray,
-        fontWeight = FontWeight.Bold,
-        modifier = modifier
-            .padding(start = 15.dp, top = 320.dp) //start: de izq a derecha, top: de arriba a abajo
+            .padding(top = 25.dp, start = 350.dp)
     )
     Image(
-        painter = painterResource(id = R.drawable._ingresocit),
-        contentDescription = "personas entrando por el cit xd",
+        painter = painterResource(id = R.drawable.fondito),
+        contentDescription = "header",
         modifier = modifier
-            .size(200.dp)
-            .padding(17.dp)
-            .offset(y = 310.dp) //bajar la imagen
-            .clip(RoundedCornerShape(cornerRadius))
+            .width(400.dp)
+            .height(295.dp)
     )
-    Image(
-        painter = painterResource(id = R.drawable.ocit),
-        contentDescription = "cit",
+    Box(
         modifier = modifier
-            .padding(start = 205.dp)
-            .offset(y = 355.dp)
+            .size(120.dp)
+            .offset(x = 135.dp, y = 155.dp)
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.pauuu),
+            contentDescription = "yo xd",
+            modifier = Modifier
+                .fillMaxSize()
+                .clip(CircleShape)
+        )
+    }
+    Text(
+        text = "ANA PAULA HONG", //no uso mi primer apellido :p
+        fontWeight = FontWeight.Bold,
+        style = TextStyle(fontSize = 21.sp),
+        modifier = modifier
+            //.fillMaxWidth() //ajusta el ancho del contenedor al máximo
+            .width(500.dp)
+            .offset(x = 13.dp, y = 190.dp)
+            .padding(100.dp)
+    )
+
+    Text(
+        text = "My Campus",
+        color = Color.Black,
+        style = TextStyle(fontSize = 19.sp),
+        modifier = modifier
+            .padding(start = 55.dp, top = 330.dp) //start: de izq a derecha, top: de arriba a abajo
     )
     Text(
-        text = "SERVICIOS Y RECURSOS",
+        text = "Campus Central",
         color = Color.DarkGray,
-        fontWeight = FontWeight.Bold,
+        style = TextStyle(fontSize = 15.sp),
         modifier = modifier
-            .padding(start = 15.dp, top = 520.dp)
+            .padding(start = 55.dp, top = 353.dp)
     )
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.iconito1_removebg_preview),
+            contentDescription = null,
+            modifier = modifier
+                .size(40.dp)
+                .offset(x = 10.dp, y = 330.dp)
+        )
+    }
+
+    Text(
+        text = "My Friends",
+        color = Color.Black,
+        style = TextStyle(fontSize = 19.sp),
+        modifier = modifier
+            .padding(start = 55.dp, top = 400.dp)
+    )
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.iconito2),
+            contentDescription = null,
+            modifier = modifier
+                .size(40.dp)
+                .offset(x = 10.dp, y = 395.dp)
+        )
+    }
+
+    Text(
+        text = "My Calendar",
+        color = Color.Black,
+        style = TextStyle(fontSize = 19.sp),
+        modifier = modifier
+            .padding(start = 55.dp, top = 450.dp)
+    )
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.iconito3),
+            contentDescription = null,
+            modifier = modifier
+                .size(40.dp)
+                .offset(x = 10.dp, y = 445.dp)
+        )
+    }
 }
 
 
