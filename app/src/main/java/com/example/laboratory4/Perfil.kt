@@ -155,7 +155,7 @@ fun Perfiil(name: String, modifier: Modifier = Modifier, cornerRadius: Dp) {
         color = Color.Black,
         style = TextStyle(fontSize = 19.sp),
         modifier = modifier
-            .padding(start = 55.dp, top = 450.dp)
+            .padding(start = 55.dp, top = 460.dp)
     )
     Box(
         modifier = modifier
@@ -166,9 +166,90 @@ fun Perfiil(name: String, modifier: Modifier = Modifier, cornerRadius: Dp) {
             contentDescription = null,
             modifier = modifier
                 .size(40.dp)
-                .offset(x = 10.dp, y = 445.dp)
+                .offset(x = 10.dp, y = 455.dp)
         )
     }
+
+    Text(
+        text = "My Courses",
+        color = Color.Black,
+        style = TextStyle(fontSize = 19.sp),
+        modifier = modifier
+            .padding(start = 55.dp, top = 518.dp)
+    )
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.iconito4),
+            contentDescription = null,
+            modifier = modifier
+                .size(40.dp)
+                .offset(x = 10.dp, y = 513.dp)
+        )
+    }
+
+    Text(
+        text = "My Grades",
+        color = Color.Black,
+        style = TextStyle(fontSize = 19.sp),
+        modifier = modifier
+            .padding(start = 55.dp, top = 575.dp)
+    )
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.iconito5),
+            contentDescription = null,
+            modifier = modifier
+                .size(40.dp)
+                .offset(x = 10.dp, y = 568.dp)
+        )
+    }
+
+    Text(
+        text = "My Groups",
+        color = Color.Black,
+        style = TextStyle(fontSize = 19.sp),
+        modifier = modifier
+            .padding(start = 55.dp, top = 628.dp)
+    )
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.iconito6),
+            contentDescription = null,
+            modifier = modifier
+                .size(40.dp)
+                .offset(x = 10.dp, y = 623.dp)
+        )
+    }
+
+    Text(
+        text = "My Upcoming Events",
+        color = Color.Black,
+        style = TextStyle(fontSize = 19.sp),
+        modifier = modifier
+            .padding(start = 55.dp, top = 680.dp)
+    )
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.iconito_7),
+            contentDescription = null,
+            modifier = modifier
+                .size(40.dp)
+                .offset(x = 10.dp, y = 673.dp)
+        )
+    }
+
 }
 
 
