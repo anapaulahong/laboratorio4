@@ -7,30 +7,25 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.laboratory4.ui.theme.Laboratory4Theme
 
-class Perfil : ComponentActivity() {
+class Configuracion : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -43,53 +38,23 @@ class Perfil : ComponentActivity() {
 }
 
 @Composable
-fun Perfiil(name: String, modifier: Modifier = Modifier, cornerRadius: Dp) {
+fun Configuracionn(name: String, modifier: Modifier = Modifier) {
     Column{
         Text(
-            text = "My Profile",
+            text = "Settings",
             style = TextStyle(fontSize = 18.sp),
             fontWeight = FontWeight.Bold,
             modifier = modifier
                 .fillMaxSize()
                 .wrapContentSize(Alignment.TopCenter)
-                .padding(30.dp)
+                .padding(28.dp)
         )
     }
     Image(
-        painterResource(id = R.drawable.settingss),
+        painterResource(id = R.drawable.close__1_),
         contentDescription = null,
         modifier = modifier
-            .padding(top = 25.dp, start = 350.dp)
-    )
-    Image(
-        painter = painterResource(id = R.drawable.fondito),
-        contentDescription = "header",
-        modifier = modifier
-            .width(400.dp)
-            .height(295.dp)
-    )
-    Box(
-        modifier = modifier
-            .size(120.dp)
-            .offset(x = 135.dp, y = 155.dp)
-    ) {
-        Image(
-            painter = painterResource(id = R.drawable.pauuu),
-            contentDescription = "yo xd",
-            modifier = Modifier
-                .fillMaxSize()
-                .clip(CircleShape)
-        )
-    }
-    Text(
-        text = "ANA PAULA HONG", //no uso mi primer apellido :p
-        fontWeight = FontWeight.Bold,
-        style = TextStyle(fontSize = 21.sp),
-        modifier = modifier
-            //.fillMaxWidth() //ajusta el ancho del contenedor al máximo
-            .width(500.dp)
-            .offset(x = 13.dp, y = 190.dp)
-            .padding(100.dp)
+            .padding(top = 35.dp, start = 25.dp)
     )
 
     Text(
@@ -218,7 +183,7 @@ fun Perfiil(name: String, modifier: Modifier = Modifier, cornerRadius: Dp) {
                 .offset(x = 10.dp, y = 623.dp)
         )
     }
-
+    
     Text(
         text = "My Upcoming Events",
         color = Color.Black,
@@ -246,7 +211,7 @@ fun Perfiil(name: String, modifier: Modifier = Modifier, cornerRadius: Dp) {
 @Composable
 fun GreetingPreview() {
     Laboratory4Theme {
-        Perfiil("Campus central", cornerRadius = 16.dp)
+        Configuracionn("Campus central")
 
     }
 }}
