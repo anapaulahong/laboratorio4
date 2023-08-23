@@ -16,6 +16,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -59,65 +61,96 @@ fun Emergency(name: String, modifier: Modifier = Modifier) {
 
 
     Text(
-        text = "Help & Feedback",
+        text = "Emergencias",
         color = Color.Black,
+        fontWeight = FontWeight.Bold,
         style = TextStyle(fontSize = 19.sp),
         modifier = modifier
             .padding(start = 55.dp, top = 80.dp) //start: de izq a derecha, top: de arriba a abajo
     )
-    Text(
-        text = "Troubleshooting tips and guides",
-        color = Color.DarkGray,
-        style = TextStyle(fontSize = 15.sp),
-        modifier = modifier
-            .padding(start = 55.dp, top = 353.dp)
-    )
     Box(
         modifier = modifier
             .fillMaxSize()
     ) {
         Image(
-            painter = painterResource(id = R.drawable.iconito12),
+            painter = painterResource(id = R.drawable.iconito14),
             contentDescription = null,
             modifier = modifier
                 .size(40.dp)
-                .offset(x = 10.dp, y = 330.dp)
+                .offset(x = 10.dp, y = 75.dp)
         )
     }
+    Text(
+        text = "Si se presenta un incidente o un percance\n" +
+                "por favor marca el número de emergencia y\n" +
+                "rápidamente te apoyamos.",
+        color = Color.DarkGray,
+        style = TextStyle(fontSize = 15.sp),
+        modifier = modifier
+            .padding(start = 55.dp, top = 105.dp)
+    )
+    Text(
+        "         Call 5978-1736                                       ",
+        color = Color.White,
+        modifier = Modifier
+            .offset(x = 15.dp, y = 170.dp)
+            .drawBehind {
+                drawRoundRect(
+                    Color(0xFF2E8B57),
+                    cornerRadius = CornerRadius(7.dp.toPx())
+                )
+            }
+            .padding(6.dp)
+    )
 
     Text(
-        text = "About",
+        text = "Clínica UVG",
         color = Color.Black,
+        fontWeight = FontWeight.Bold,
         style = TextStyle(fontSize = 19.sp),
         modifier = modifier
-            .padding(start = 55.dp, top = 400.dp) //start: de izq a derecha, top: de arriba a abajo
+            .padding(start = 55.dp, top = 235.dp) //start: de izq a derecha, top: de arriba a abajo
     )
     Text(
-        text = "App information and documents",
+        text = "La clínica UVG presenta los siguientes\n" +
+                "servicios:\n" +
+                "\n" +
+                "○ Atención a emergencias\n" +
+                "○ Atención primaria a enfermedades\n" +
+                "   comunes\n" +
+                "○ Plan educacional sobre enfermedades\n" +
+                "\n" +
+                "Horario de atención: 7:00 a.m. a 8:30 p.m.\n" +
+                "Campus central Edificio F 119-120",
         color = Color.DarkGray,
         style = TextStyle(fontSize = 15.sp),
         modifier = modifier
-            .padding(start = 55.dp, top = 423.dp)
+            .padding(start = 55.dp, top = 263.dp)
     )
     Box(
         modifier = modifier
             .fillMaxSize()
     ) {
         Image(
-            painter = painterResource(id = R.drawable.iconito13),
+            painter = painterResource(id = R.drawable.clinicaa),
             contentDescription = null,
             modifier = modifier
                 .size(40.dp)
-                .offset(x = 10.dp, y = 400.dp)
+                .offset(x = 8.dp, y = 238.dp)
         )
     }
-
     Text(
-        text = "Logout",
-        color = Color.Red,
-        style = TextStyle(fontSize = 19.sp),
-        modifier = modifier
-            .padding(start = 170.dp, top = 480.dp) //start: de izq a derecha, top: de arriba a abajo
+        "         Call 2507-1500 ex 21312                       ",
+        color = Color.White,
+        modifier = Modifier
+            .offset(x = 15.dp, y = 460.dp)
+            .drawBehind {
+                drawRoundRect(
+                    Color(0xFF2E8B57),
+                    cornerRadius = CornerRadius(7.dp.toPx())
+                )
+            }
+            .padding(6.dp)
     )
 
 
