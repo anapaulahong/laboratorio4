@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -27,10 +28,12 @@ import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.laboratory4.ui.theme.Laboratory4Theme
 
 class MainActivity : ComponentActivity() {
@@ -69,30 +72,130 @@ fun Campus(name: String, modifier: Modifier = Modifier, cornerRadius: Dp) {
         color = Color.DarkGray,
         fontWeight = FontWeight.Bold,
         modifier = modifier
-            .padding(start = 15.dp, top = 320.dp) //start: de izq a derecha, top: de arriba a abajo
+            .padding(start = 23.dp, top = 320.dp) //start: de izq a derecha, top: de arriba a abajo
     )
-    Image(
-        painter = painterResource(id = R.drawable._ingresocit),
-        contentDescription = "personas entrando por el cit xd",
+    Box(
         modifier = modifier
-            .size(200.dp)
-            .padding(17.dp)
-            .offset(y = 310.dp) //bajar la imagen
-            .clip(RoundedCornerShape(cornerRadius))
+            .fillMaxSize()
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.ingresocitt),
+            contentDescription = "personas entrando por el cit xd",
+            modifier = modifier
+                .size(215.dp)
+                .padding(20.dp)
+                .offset(y = 310.dp) //bajar la imagen
+        )
+    }
+    Text(
+        "Service Now                          ",
+        color = Color.White,
+        style = TextStyle(fontSize = 13.sp),
+        fontWeight = FontWeight.Bold,
+        modifier = Modifier
+            .offset(x = 22.dp, y = 442.dp)
+            .drawBehind {
+                drawRoundRect(
+                    Color(0xFF2E8B57),
+                    cornerRadius = CornerRadius(8.dp.toPx())
+                )
+            }
+            .padding(6.dp)
     )
-    Image(
-        painter = painterResource(id = R.drawable.ocit),
-        contentDescription = "cit",
+
+    Box(
         modifier = modifier
-            .padding(start = 205.dp)
-            .offset(y = 355.dp)
+            .fillMaxSize()
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.clasecit),
+            contentDescription = "cit",
+            modifier = modifier
+                .size(220.dp)
+                .padding(22.dp)
+                .offset(x = 175.dp, y = 308.dp)
+        )
+    }
+    Text(
+        "Actualidad UVG                     ",
+        color = Color.White,
+        style = TextStyle(fontSize = 13.sp),
+        fontWeight = FontWeight.Bold,
+        modifier = Modifier
+            .offset(x = 199.dp, y = 442.dp)
+            .drawBehind {
+                drawRoundRect(
+                    Color(0xFF818589),
+                    cornerRadius = CornerRadius(8.dp.toPx())
+                )
+            }
+            .padding(6.dp)
     )
+
     Text(
         text = "SERVICIOS Y RECURSOS",
         color = Color.DarkGray,
         fontWeight = FontWeight.Bold,
         modifier = modifier
-            .padding(start = 15.dp, top = 520.dp)
+            .padding(start = 25.dp, top = 500.dp)
+    )
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.biblio),
+            contentDescription = null,
+            modifier = modifier
+                .size(215.dp)
+                .padding(20.dp)
+                .offset(y = 490.dp) //bajar la imagen
+        )
+    }
+    Text(
+        "Directorio de servicios         \n" +
+                "estudiantiles",
+        color = Color.White,
+        style = TextStyle(fontSize = 13.sp),
+        fontWeight = FontWeight.Bold,
+        modifier = Modifier
+            .offset(x = 23.dp, y = 610.dp)
+            .drawBehind {
+                drawRoundRect(
+                    Color(0xFF2E8B57),
+                    cornerRadius = CornerRadius(8.dp.toPx())
+                )
+            }
+            .padding(6.dp)
+    )
+
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.portalbiblio),
+            contentDescription = null,
+            modifier = modifier
+                .size(220.dp)
+                .padding(22.dp)
+                .offset(x = 175.dp, y = 488.dp)
+        )
+    }
+    Text(
+        "Portal Web Bibliotecas UVG",
+        color = Color.White,
+        style = TextStyle(fontSize = 13.sp),
+        fontWeight = FontWeight.Bold,
+        modifier = Modifier
+            .offset(x = 199.dp, y = 620.dp)
+            .drawBehind {
+                drawRoundRect(
+                    Color(0xFF818589),
+                    cornerRadius = CornerRadius(8.dp.toPx())
+                )
+            }
+            .padding(6.dp)
     )
 }
 
